@@ -27,6 +27,9 @@ jobs:
           export NAME=Michael
           echo $NAME
 
+      - name: Release app
+        run: npm run release
+
   deploy:
     runs-on: ubuntu-latest
     needs: build-test
