@@ -17,10 +17,10 @@ jobs:
         run: npm ci
 
       - name: Test app
-        run: npm test
+        run: npm run test
 
       - name: Build app
-        run: npm build
+        run: npm run build
 
       - name: Echo the name
         run: |
