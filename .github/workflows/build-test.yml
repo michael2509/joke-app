@@ -27,6 +27,12 @@ jobs:
           export NAME=Michael
           echo $NAME
 
+      - name: Set git user email
+        run: git config --global user.email "michaeldemadet@gmail.com"
+
+      - name: Set git user email
+        run: git config --global user.name "michael2509"
+
       - name: Release app
         run: npm run release
 
