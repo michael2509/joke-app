@@ -26,3 +26,15 @@ jobs:
         run: |
           export NAME=Michael
           echo $NAME
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-test
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: 'joke-app-m' #Must be unique in Heroku
+          heroku_email: 'michaeldemadet@gmail.com'
